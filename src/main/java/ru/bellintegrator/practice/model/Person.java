@@ -36,6 +36,10 @@ public class Person {
     @Column(name = "age")
     private int age;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "house_id")
+    private House house;
+
     // для hibernate
     public Person() {
 
@@ -48,7 +52,20 @@ public class Person {
 
     @Override
     public String toString() {
-        return "{id:" + getId() + ";name:" + getName() + ";age" + getAge() + "}";
+        StringBuilder builder = new StringBuilder();
+        builder.append("{id:");
+        builder.append(getId());
+        builder.append(";name:");
+        builder.append(getName());
+        builder.append(";age:");
+        builder.append(getAge());
+        if (house != null) {
+            builder.append(";address:");
+            builder.append(house.getAddress());
+        }
+        builder.append("}");
+
+        return builder.toString();
     }
 
     public Long getId() {
@@ -81,5 +98,13 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public House getHouse() {
+        return house;
+    }
+
+    public void setHouse(House house) {
+        this.house = house;
     }
 }
