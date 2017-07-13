@@ -1,5 +1,6 @@
 package ru.bellintegrator.practice.controller.impl;
 
+import io.swagger.annotations.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,12 +40,18 @@ public class DummyControllerImpl implements DummyController {
     }
 
     @Override
+    @ApiOperation(value = "addPerson", nickname = "addPerson", httpMethod = "POST")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success", response = String.class),
+            @ApiResponse(code = 404, message = "Not Found"),
+            @ApiResponse(code = 500, message = "Failure")})
     @RequestMapping(value = "/person", method = {POST})
     public void person(@RequestBody PersonView person) {
         dummyService.add(person);
     }
 
     @Override
+    @ApiOperation(value = "getPersons", nickname = "getPersons", httpMethod = "GET")
     @RequestMapping(value = "/person", method = {GET})
     public List<PersonView> persons() {
         return dummyService.persons();
