@@ -1,10 +1,13 @@
 package ru.bellintegrator.practice.view;
 
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * Dummy data view
  * Just for test
  */
 public class PersonView {
+    @ApiModelProperty(hidden = true)
     public String id;
 
     public String name;
