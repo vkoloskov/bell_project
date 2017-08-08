@@ -1,13 +1,6 @@
 package ru.bellintegrator.practice.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Version;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -34,7 +27,7 @@ public class House {
     @Column(name = "address")
     private String address;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "house")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "house", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private List<Person> persons;
 
     public Long getId() {
