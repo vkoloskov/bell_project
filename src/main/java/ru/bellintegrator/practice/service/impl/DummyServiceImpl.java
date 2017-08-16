@@ -7,18 +7,17 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.bellintegrator.practice.dao.PersonDAO;
 import ru.bellintegrator.practice.model.Person;
 import ru.bellintegrator.practice.service.DummyService;
-import ru.bellintegrator.practice.dao.PersonDAO;
 import ru.bellintegrator.practice.view.PersonView;
 
-import java.nio.charset.Charset;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
-@Scope(value = "session", proxyMode = ScopedProxyMode.INTERFACES)
+@Scope(proxyMode = ScopedProxyMode.INTERFACES)
 public class DummyServiceImpl implements DummyService {
     private final Logger log = LoggerFactory.getLogger(DummyServiceImpl.class);
 

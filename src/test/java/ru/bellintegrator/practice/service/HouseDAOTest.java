@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.bellintegrator.practice.Application;
 import ru.bellintegrator.practice.model.House;
 import ru.bellintegrator.practice.model.Person;
-import ru.bellintegrator.practice.service.impl.HouseDAOImpl;
+import ru.bellintegrator.practice.dao.impl.HouseDAOImpl;
 
 import java.util.ArrayList;
 import java.util.List;
