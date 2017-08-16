@@ -1,4 +1,4 @@
-package ru.bellintegrator.practice.service;
+package ru.bellintegrator.practice.dao;
 
 import ru.bellintegrator.practice.model.Person;
 
