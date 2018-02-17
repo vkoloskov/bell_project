@@ -4,7 +4,9 @@ import ru.bellintegrator.practice.model.House;
 
 import java.util.List;
 
-
+/**
+ * DAO для работы с House
+ */
 public interface HouseDAO {
     /**
      * Получить все объекты House

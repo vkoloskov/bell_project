@@ -5,7 +5,7 @@ import ru.bellintegrator.practice.model.Person;
 import java.util.List;
 
 /**
- * DAO для работы с PersonView
+ * DAO для работы с Person
  */
 public interface PersonDAO {
     /**
