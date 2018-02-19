@@ -1,5 +1,6 @@
 package ru.bellintegrator.practice.service;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,9 +10,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 import ru.bellintegrator.practice.Application;
+import ru.bellintegrator.practice.dao.HouseDAO;
 import ru.bellintegrator.practice.model.House;
 import ru.bellintegrator.practice.model.Person;
-import ru.bellintegrator.practice.dao.impl.HouseDAOImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +26,10 @@ import java.util.List;
 public class HouseDAOTest {
 
     @Autowired
-    private HouseDAOImpl houseDAO;
+    private HouseDAO houseDAO;
 
     @Test
-    public void test() throws Exception {
+    public void test() {
         House house = new House();
         List<Person> list = new ArrayList<>();
         house.setAddress("Address");
@@ -39,17 +40,23 @@ public class HouseDAOTest {
         houseDAO.save(house);
 
         List<House> houses = houseDAO.all();
-        assert houses != null;
+        Assert.assertNotNull(houses);
 
         person.setHouse(house);
 
-        houses = houseDAO.all();
-        assert houses.get(1).getPersons().size() == 1;
+        Assert.assertFalse(houses.isEmpty());
+
+        List<Person> persons = houses.get(1).getPersons();
+
+        Assert.assertNotNull(persons);
+        Assert.assertEquals(1, persons.size());
 
         Person person1 = new Person("Two", 2);
         list.add(person1);
 
         houses = houseDAO.all();
-        assert houses.get(1).getPersons().size() == 2;
+        persons = houses.get(1).getPersons();
+        Assert.assertNotNull(person);
+        Assert.assertEquals(2, persons.size());
     }
 }
