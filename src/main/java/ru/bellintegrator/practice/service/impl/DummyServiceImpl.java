@@ -29,14 +29,6 @@ public class DummyServiceImpl implements DummyService {
         this.dao = dao;
     }
 
-    @Transactional
-    public void test() {
-        Person person = dao.loadById(1L);
-        House house = person.getHouses().iterator().next();
-        person.removeHouse(house);
-        dao.save(person);
-    }
-
     @Override
     @Transactional
     public void add(PersonView view) {

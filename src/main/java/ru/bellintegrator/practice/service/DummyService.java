@@ -9,8 +9,6 @@ import java.util.List;
  */
 public interface DummyService {
 
-    void test();
-
     /**
      *
      * @param person
