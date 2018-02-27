@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.bellintegrator.practice.controller.DummyController;
 import ru.bellintegrator.practice.service.DummyService;
+import ru.bellintegrator.practice.service.ProxyTest;
 import ru.bellintegrator.practice.view.PersonView;
 
 import java.util.List;
@@ -24,6 +25,9 @@ public class DummyControllerImpl implements DummyController {
     private final DummyService dummyService;
 
     @Autowired
+    private ProxyTest proxyTest;
+
+    @Autowired
     public DummyControllerImpl(DummyService dummyService) {
         this.dummyService = dummyService;
     }
@@ -31,7 +35,7 @@ public class DummyControllerImpl implements DummyController {
     @Override
     @RequestMapping(value = "/ping", method = {GET, POST})
     public String ping() {
-        dummyService.test();
+        proxyTest.allPersons();
         return "pong";
     }
 

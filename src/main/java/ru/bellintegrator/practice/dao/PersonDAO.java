@@ -15,6 +15,8 @@ public interface PersonDAO {
      */
     List<Person> all();
 
+    long count();
+
     /**
      * Получить Person по идентификатору
      *

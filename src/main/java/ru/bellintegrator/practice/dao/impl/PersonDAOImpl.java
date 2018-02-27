@@ -34,6 +34,10 @@ public class PersonDAOImpl implements PersonDAO {
         return query.getResultList();
     }
 
+    public long count() {
+        return em.createQuery("SELECT COUNT(p) FROM Person p", Long.class).getSingleResult();
+    }
+
     /**
      * {@inheritDoc}
      */

@@ -109,5 +109,4 @@ public class Person {
         getHouses().remove(house);
         house.getPersons().remove(this);
     }
-
 }
