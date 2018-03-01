@@ -11,6 +11,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import ru.bellintegrator.practice.aspect.AspectExample;
+import ru.bellintegrator.practice.controller.error.ExceptionHandlerController;
 import ru.bellintegrator.practice.controller.impl.DummyControllerImpl;
 import ru.bellintegrator.practice.dao.impl.PersonDAOImpl;
 import ru.bellintegrator.practice.service.impl.DummyServiceImpl;
@@ -32,6 +33,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
         DummyControllerImpl.class,
         DummyServiceImpl.class,
         PersonDAOImpl.class,
+        ExceptionHandlerController.class,
         AspectExample.class
 })
 public class Application {

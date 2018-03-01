@@ -1,4 +1,4 @@
-package ru.bellintegrator.practice.controller.impl;
+package ru.bellintegrator.practice.controller.error;
 
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
