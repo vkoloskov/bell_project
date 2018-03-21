@@ -11,18 +11,6 @@ public class PersonView {
 
     public int age;
 
-    /**
-     * Нужен для десериализатора в jenkins
-     */
-    public PersonView() {
-
-    }
-
-    public PersonView(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
     @Override
     public String toString() {
         return "{id:" + id + ";name:" + name + ";age" + age + "}";
