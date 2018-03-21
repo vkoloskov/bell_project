@@ -1,12 +1,9 @@
-package ru.bellintegrator.practice.view;
+package ru.bellintegrator.practice.person.view;
 
 import io.swagger.annotations.ApiModelProperty;
 
-/**
- * Dummy data view
- * Just for test
- */
 public class PersonView {
+
     @ApiModelProperty(hidden = true)
     public String id;
 
@@ -14,7 +11,9 @@ public class PersonView {
 
     public int age;
 
-    //для jackson
+    /**
+     * Нужен для десериализатора в jenkins
+     */
     public PersonView() {
 
     }

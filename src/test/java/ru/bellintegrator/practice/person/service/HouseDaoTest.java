@@ -1,4 +1,4 @@
-package ru.bellintegrator.practice.service;
+package ru.bellintegrator.practice.person.service;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,24 +10,23 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 import ru.bellintegrator.practice.Application;
-import ru.bellintegrator.practice.dao.HouseDAO;
-import ru.bellintegrator.practice.model.House;
-import ru.bellintegrator.practice.model.Person;
+import ru.bellintegrator.practice.house.dao.HouseDao;
+import ru.bellintegrator.practice.house.model.House;
+import ru.bellintegrator.practice.person.model.Person;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {Application.class})
 @WebAppConfiguration(value = "src/main/resources")
 @Transactional
 @DirtiesContext
-public class HouseDAOTest {
+public class HouseDaoTest {
 
     @Autowired
-    private HouseDAO houseDAO;
+    private HouseDao houseDao;
 
     @Test
     public void test() {
@@ -38,9 +37,9 @@ public class HouseDAOTest {
         person.addHouse(house);
         house.setPersons(list);
         list.add(person);
-        houseDAO.save(house);
+        houseDao.save(house);
 
-        List<House> houses = houseDAO.all();
+        List<House> houses = houseDao.all();
         Assert.assertNotNull(houses);
 
         person.addHouse(house);
@@ -55,7 +54,7 @@ public class HouseDAOTest {
         Person person1 = new Person("Two", 2);
         list.add(person1);
 
-        houses = houseDAO.all();
+        houses = houseDao.all();
         persons = houses.get(1).getPersons();
         Assert.assertNotNull(person);
         Assert.assertEquals(1, persons.size());

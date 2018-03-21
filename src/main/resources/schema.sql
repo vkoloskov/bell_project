@@ -13,7 +13,9 @@ CREATE TABLE IF NOT EXISTS House (
 
 CREATE TABLE IF NOT EXISTS Person_House (
     person_id   INTEGER  NOT NULL,
-    house_id    INTEGER  NOT NULL
+    house_id    INTEGER  NOT NULL,
+
+    PRIMARY KEY (person_id, house_id)
 );
 
 CREATE INDEX IX_Person_House_Id ON Person_House (house_id);
