@@ -57,7 +57,6 @@ public class Person {
             joinColumns = @JoinColumn(name = "person_id"),
             inverseJoinColumns = @JoinColumn(name = "house_id")
     )
-
     private Set<House> houses;
 
     /**
