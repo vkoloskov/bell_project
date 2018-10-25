@@ -1,5 +1,6 @@
-package ru.bellintegrator.practice.person.controller;
+package ru.bellintegrator.practice.controller.person;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -9,15 +10,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ru.bellintegrator.practice.person.service.PersonService;
-import ru.bellintegrator.practice.person.view.PersonView;
+import ru.bellintegrator.practice.service.PersonService;
+import ru.bellintegrator.practice.view.PersonView;
 
 import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
+@Api(value = "PersonController", description = "Управление информацией о людях")
 @RestController
 @RequestMapping(value = "/", produces = APPLICATION_JSON_VALUE)
 public class PersonController {
@@ -29,7 +29,7 @@ public class PersonController {
         this.personService = personService;
     }
 
-    @ApiOperation(value = "addPerson", nickname = "addPerson", httpMethod = "POST")
+    @ApiOperation(value = "Добавить нового человека", httpMethod = "POST")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Success", response = String.class),
             @ApiResponse(code = 404, message = "Not Found"),
@@ -39,7 +39,7 @@ public class PersonController {
         personService.add(person);
     }
 
-    @ApiOperation(value = "getPersons", nickname = "getPersons", httpMethod = "GET")
+    @ApiOperation(value = "Получить список всех людей", httpMethod = "GET")
     @GetMapping("/person")
     public List<PersonView> persons() {
         return personService.persons();

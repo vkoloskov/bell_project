@@ -1,6 +1,4 @@
-package ru.bellintegrator.practice.person.model;
-
-import ru.bellintegrator.practice.house.model.House;
+package ru.bellintegrator.practice.model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;

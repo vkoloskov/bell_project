@@ -10,9 +10,9 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 import ru.bellintegrator.practice.Application;
-import ru.bellintegrator.practice.house.dao.HouseDao;
-import ru.bellintegrator.practice.house.model.House;
-import ru.bellintegrator.practice.person.model.Person;
+import ru.bellintegrator.practice.dao.house.HouseDao;
+import ru.bellintegrator.practice.model.House;
+import ru.bellintegrator.practice.model.Person;
 
 import java.util.HashSet;
 import java.util.List;

@@ -1,6 +1,6 @@
-package ru.bellintegrator.practice.person.service;
+package ru.bellintegrator.practice.service;
 
-import ru.bellintegrator.practice.person.view.PersonView;
+import ru.bellintegrator.practice.view.PersonView;
 
 import java.util.List;
 
