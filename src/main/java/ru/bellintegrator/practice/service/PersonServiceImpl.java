@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ru.bellintegrator.practice.dao.person.PersonDao;
-import ru.bellintegrator.practice.model.mapper.MapperFacade;
 import ru.bellintegrator.practice.model.Person;
+import ru.bellintegrator.practice.model.mapper.MapperFacade;
 import ru.bellintegrator.practice.view.PersonView;
 
 import java.util.List;

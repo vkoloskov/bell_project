@@ -1,12 +1,15 @@
 package ru.bellintegrator.practice.service;
 
+import org.springframework.validation.annotation.Validated;
 import ru.bellintegrator.practice.view.PersonView;
 
+import javax.validation.Valid;
 import java.util.List;
 
 /**
  * Сервис
  */
+@Validated
 public interface PersonService {
 
     /**
@@ -14,7 +17,7 @@ public interface PersonService {
      *
      * @param person
      */
-    void add(PersonView person);
+    void add(@Valid PersonView person);
 
     /**
      * Получить список людей
