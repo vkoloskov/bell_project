@@ -1,8 +1,8 @@
-package ru.bellintegrator.practice.dao.impl;
+package ru.bellintegrator.practice.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import ru.bellintegrator.practice.dao.PersonDAO;
+import ru.bellintegrator.practice.dao.PersonDao;
 import ru.bellintegrator.practice.model.Person;
 
 import javax.persistence.EntityManager;
@@ -16,12 +16,12 @@ import java.util.List;
  * {@inheritDoc}
  */
 @Repository
-public class PersonDAOImpl implements PersonDAO {
+public class PersonDaoImpl implements PersonDao {
 
     private final EntityManager em;
 
     @Autowired
-    public PersonDAOImpl(EntityManager em) {
+    public PersonDaoImpl(EntityManager em) {
         this.em = em;
     }
 

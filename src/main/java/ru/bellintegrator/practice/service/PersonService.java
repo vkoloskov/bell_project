@@ -5,18 +5,20 @@ import ru.bellintegrator.practice.view.PersonView;
 import java.util.List;
 
 /**
- * Some service. Just for test
+ * Сервис
  */
-public interface DummyService {
+public interface PersonService {
 
     /**
+     * Добавить нового человека в БД
      *
      * @param person
      */
     void add(PersonView person);
 
     /**
-     * Dummy service method
+     * Получить список людей
+     *
      * @return {@Person}
      */
     List<PersonView> persons();

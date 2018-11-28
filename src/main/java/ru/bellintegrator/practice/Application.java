@@ -11,10 +11,10 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import ru.bellintegrator.practice.aspect.AspectExample;
-import ru.bellintegrator.practice.controller.error.ExceptionHandlerController;
-import ru.bellintegrator.practice.controller.impl.DummyControllerImpl;
-import ru.bellintegrator.practice.dao.impl.PersonDAOImpl;
-import ru.bellintegrator.practice.service.impl.DummyServiceImpl;
+import ru.bellintegrator.practice.error.ExceptionHandlerController;
+import ru.bellintegrator.practice.controller.PersonController;
+import ru.bellintegrator.practice.dao.PersonDaoImpl;
+import ru.bellintegrator.practice.service.PersonServiceImpl;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
@@ -30,9 +30,9 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @ImportResource("spring_mvc_config.xml")
 @SpringBootApplication
 @ComponentScan(basePackageClasses = {
-        DummyControllerImpl.class,
-        DummyServiceImpl.class,
-        PersonDAOImpl.class,
+        PersonController.class,
+        PersonServiceImpl.class,
+        PersonDaoImpl.class,
         ExceptionHandlerController.class,
         AspectExample.class
 })

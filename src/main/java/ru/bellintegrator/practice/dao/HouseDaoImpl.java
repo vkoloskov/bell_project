@@ -1,8 +1,8 @@
-package ru.bellintegrator.practice.dao.impl;
+package ru.bellintegrator.practice.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import ru.bellintegrator.practice.dao.HouseDAO;
+import ru.bellintegrator.practice.dao.HouseDao;
 import ru.bellintegrator.practice.model.House;
 
 import javax.persistence.EntityManager;
@@ -10,12 +10,12 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
-public class HouseDAOImpl implements HouseDAO {
+public class HouseDaoImpl implements HouseDao {
 
     private final EntityManager em;
 
     @Autowired
-    public HouseDAOImpl(EntityManager em) {
+    public HouseDaoImpl(EntityManager em) {
         this.em = em;
     }
 

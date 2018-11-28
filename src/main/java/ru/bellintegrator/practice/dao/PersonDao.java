@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * DAO для работы с Person
  */
-public interface PersonDAO {
+public interface PersonDao {
     /**
      * Получить все объекты Person
      *

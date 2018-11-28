@@ -1,4 +1,4 @@
-package ru.bellintegrator.practice.service.impl;
+package ru.bellintegrator.practice.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,10 +7,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.bellintegrator.practice.dao.PersonDAO;
-import ru.bellintegrator.practice.model.House;
+import ru.bellintegrator.practice.dao.PersonDao;
 import ru.bellintegrator.practice.model.Person;
-import ru.bellintegrator.practice.service.DummyService;
 import ru.bellintegrator.practice.view.PersonView;
 
 import java.util.List;
@@ -18,14 +16,13 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @Service
-@Scope(proxyMode = ScopedProxyMode.INTERFACES)
-public class DummyServiceImpl implements DummyService {
-    private final Logger log = LoggerFactory.getLogger(DummyServiceImpl.class);
+public class PersonServiceImpl implements PersonService {
+    private final Logger log = LoggerFactory.getLogger(PersonServiceImpl.class);
 
-    private final PersonDAO dao;
+    private final PersonDao dao;
 
     @Autowired
-    public DummyServiceImpl(PersonDAO dao) {
+    public PersonServiceImpl(PersonDao dao) {
         this.dao = dao;
     }
 

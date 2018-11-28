@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class AspectExample {
     Logger log = LoggerFactory.getLogger(AspectExample.class);
 
-    @Around("execution(* ru.bellintegrator.practice.controller.impl.DummyControllerImpl.ping())")
+    @Around("execution(* ru.bellintegrator.practice.service.PersonServiceImpl.persons())")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
         log.info("INVOCATION METHOD:" + joinPoint.getSignature().toShortString());
 
