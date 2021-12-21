@@ -1,5 +1,12 @@
 package ru.bellintegrator.practice.User.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Data;
+import ru.bellintegrator.practice.Citizenship.entity.Citizenship;
+import ru.bellintegrator.practice.Document.entity.Document;
+import ru.bellintegrator.practice.Office.entity.Office;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -8,10 +15,11 @@ import java.util.Set;
  * Пользователь
  */
 @Entity(name = "User")
+@Data
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name = "id")
     private Long id;
 
     /**
@@ -45,69 +53,30 @@ public class User {
     private String phone;
 
     /**
-     * Адрес
+     * Идентефицирован
      */
     @Column(name = "is_identified")
     private Boolean isIdentified;
 
-    /**
-     * Адрес
-     */
-    @Column(name = "address", length = 50, nullable = false)
-    private String address;
 
     /**
      * Офис
      */
-    //@OneToOne(optional = false, cascade = CascadeType.ALL)
-    //@JoinColumn(name = "office_id")
-    //private Office office;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "office_id")
+    private Office office;
 
     /**
      * Гражданство
      */
-    //@OneToOne(optional = false, cascade = CascadeType.ALL)
-    //@JoinColumn(name = "citizenship_code")
-    //private Citizenship citizenship;
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "citizenship_code")
+    private Citizenship citizenship;
 
     /**
      * Документ
      */
-    //@OneToOne(optional = false, cascade = CascadeType.ALL)
-    //@JoinColumn(name = "document_id")
-    //private Document document;
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public Boolean getIdentified() {
-        return isIdentified;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
+    @OneToOne(optional = false, mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private Document document;
 
 }
