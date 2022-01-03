@@ -1,13 +1,10 @@
 package ru.bellintegrator.practice.Organization.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import ru.bellintegrator.practice.Office.entity.Office;
-import ru.bellintegrator.practice.User.entity.User;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -39,6 +36,36 @@ public class Organization {
      */
     @Column(name = "full_name", length = 50, nullable = false)
     private String fullName;
+
+    /**
+     * Адрес
+     */
+    @Column(name = "address", length = 50, nullable = false)
+    private String address;
+
+    /**
+     * Телефон
+     */
+    @Column(name = "phone", length = 50, nullable = false)
+    private String phone;
+
+    /**
+     * Активный?
+     */
+    @Column(name = "is_active")
+    private Boolean isActive;
+
+    /**
+     * ИНН
+     */
+    @Column(name = "inn", length = 50, nullable = false)
+    private String inn;
+
+    /**
+     * КПП
+     */
+    @Column(name = "kpp", length = 50, nullable = false)
+    private String kpp;
 
     /**
      * Офисы

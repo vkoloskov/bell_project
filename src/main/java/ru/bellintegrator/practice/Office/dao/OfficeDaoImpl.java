@@ -29,7 +29,7 @@ public class OfficeDaoImpl implements OfficeDao {
      */
     @Override
     @Builder
-    public List<Office> getAll(OfficeFilter filter) {
+    public List<Office> getAll(Of) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Office> cq = cb.createQuery(Office.class);
         Root<Office> officeRoot = cq.from(Office.class
@@ -67,5 +67,14 @@ public class OfficeDaoImpl implements OfficeDao {
     public void save(Office office) {
         em.persist(office);
     }
+
+//    @Override
+//    public Office update(Office office) {
+//        Office tmpOffice = loadById(office.getId());
+//        tmpOffice.setName(office.getName());
+//        tmpOffice.setAddress(office.getAddress());
+//        tmpOffice.setIsActive(office.getIsActive());
+//        save(tmpOffice);
+//    }
 
 }

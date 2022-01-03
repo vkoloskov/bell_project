@@ -15,7 +15,7 @@ public interface OfficeDao {
      *
      * @return
      */
-    List<Office> getAll(OfficeFilter office);
+    List<Office> getAll(Office office);
 
     /**
      * Получить Office по идентификатору

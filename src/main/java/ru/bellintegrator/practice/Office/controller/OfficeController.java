@@ -23,7 +23,7 @@ public class OfficeController {
     }
 
     @GetMapping("/list/{orgId}")
-    public List<Office> offices(@PathVariable(value = "OrgId") Long orgId) {
+    public List<Office> offices(@PathVariable(value = "orgId") Long orgId) {
         return officeService.getOffices(orgId,null, null);
     }
     @GetMapping("/{id}")
