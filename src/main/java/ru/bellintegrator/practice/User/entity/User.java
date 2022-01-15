@@ -1,15 +1,11 @@
 package ru.bellintegrator.practice.User.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import ru.bellintegrator.practice.Citizenship.entity.Citizenship;
 import ru.bellintegrator.practice.Document.entity.Document;
 import ru.bellintegrator.practice.Office.entity.Office;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Пользователь

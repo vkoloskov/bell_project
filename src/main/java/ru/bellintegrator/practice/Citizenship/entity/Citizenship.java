@@ -1,12 +1,7 @@
 package ru.bellintegrator.practice.Citizenship.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
-import ru.bellintegrator.practice.Document.entity.Document;
-import ru.bellintegrator.practice.User.entity.User;
-
 import javax.persistence.*;
-import java.util.Set;
 
 /**
  * Гражданство

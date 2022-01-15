@@ -1,11 +1,6 @@
 package ru.bellintegrator.practice.Office.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import ru.bellintegrator.practice.Organization.entity.Organization;
 import ru.bellintegrator.practice.User.entity.User;
 
