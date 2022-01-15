@@ -1,7 +1,7 @@
 package ru.bellintegrator.practice.Office.dao;
 
 import ru.bellintegrator.practice.Office.entity.Office;
-import ru.bellintegrator.practice.Office.filter.OfficeFilter;
+
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public interface OfficeDao {
      *
      * @return
      */
-    List<Office> getAll(Office office);
+    List<Office> getAll(Long orgId, String name, Boolean isActive);
 
     /**
      * Получить Office по идентификатору

@@ -11,7 +11,8 @@ import java.util.Set;
  * Офис
  */
 @Entity(name = "Organization")
-@Data
+@Getter
+@Setter
 public class Organization {
 
     @Id
